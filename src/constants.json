@@ -34,6 +34,13 @@
         "description": "Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat. Vivamus blandit, dolor vitae lacinia maximus, risus velit vehicula odio, a tincidunt turpis turpis tempus ex."
     }
   ],
+  "educations": [
+    {
+        "academy": "Jambod",
+        "date": "May 2018 - Jul 2019",
+        "major": "Android Intern"
+    }
+  ],
   "colors": {
     "text-1": "#333",
     "text-2": "#666",

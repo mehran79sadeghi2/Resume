@@ -1,0 +1,82 @@
+.Container {
+  padding: 0 16px;
+  margin-bottom: 40px;
+
+  .SectionTitle {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    @media screen and (max-width: 850px) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .ExperiencesContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .ExperienceItemContainer {
+      width: 50%;
+      padding-right: 15px;
+      padding-left: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-self: stretch;
+      align-items: flex-start;
+      margin-top: 16px;
+
+      @media screen and (max-width: 850px) {
+        width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      .TitleRow {
+        margin-top: 16px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: left;
+
+        h4.Company {
+          font-size: 16px;
+          text-align: right;
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+
+        .VSeprator {
+          width: 2px;
+          height: 13px;
+          background-color: var(--text-3);
+          margin: 0 10px;
+        }
+
+        .Date {
+          font-size: 13px;
+          color: var(--text-3);
+        }
+      }
+
+      .Profession {
+        font-size: 15px;
+        color: var(--text-3);
+        margin-top: 8px;
+        margin-bottom: 0;
+      }
+
+      .Description {
+        font-size: 14px;
+        color: var(--text-2);
+        text-align: justify;
+      }
+    }
+  }
+}

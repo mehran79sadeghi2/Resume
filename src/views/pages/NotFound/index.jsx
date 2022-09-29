@@ -1,0 +1,76 @@
+import { memo, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import Button from "../../shared-components/Button";
+import {
+  customKeyframes,
+  initialNumListConfigs,
+  maxBlur,
+  maxFontSize,
+  minFontSize,
+} from "./config";
+import styles from "./NotFound.module.scss";
+
+const NumberItem = styled.div`
+  position: fixed;
+  top: ${(props) => props.top}px;
+  left: ${(props) => props.left}px;
+  filter: blur(${(props) => props.blur}px);
+  animation: ${(props) => props.keyframes} ${(props) => props.transition}s
+    linear infinite;
+  transition: 1s;
+  font-size: ${(props) => props.fontSize}px;
+`;
+
+function NotFound() {
+  const itemRefs = useRef([]);
+
+  function updateShuffle() {
+    itemRefs.current.forEach((item, itemIndex) => {
+      item.style.top = `${Math.random() * window.innerHeight}px`;
+      item.style.left = `${Math.random() * window.innerWidth}px`;
+      item.style.filter = `blur(${Math.random() * maxBlur}px)`;
+      item.style.fontSize = `${
+        Math.ceil(Math.random() * (maxFontSize - minFontSize)) + minFontSize
+      }px`;
+    });
+  }
+
+  useEffect(function handleResize() {
+    window.addEventListener("resize", updateShuffle);
+    return function unmounting() {
+      window.removeEventListener("resize", updateShuffle);
+    };
+  }, []);
+
+  return (
+    <>
+      {initialNumListConfigs.map(function makeConfigItemComponent(
+        configItem,
+        configItemIndex
+      ) {
+        const { goUp, transform, ...otherConfigs } = configItem;
+        return (
+          <NumberItem
+            key={`num-${configItemIndex}`}
+            ref={(el) => (itemRefs.current[configItemIndex] = el)}
+            {...otherConfigs}
+            keyframes={customKeyframes(goUp, transform)}
+          >
+            {configItem.value}
+          </NumberItem>
+        );
+      })}
+      <div className={styles.Container}>
+        <h1 onClick={updateShuffle} className={styles.Message}>
+          404
+        </h1>
+        <Link to={"/"} className={styles.ButtonContainer}>
+          <Button className={styles.Button}>Home</Button>
+        </Link>
+      </div>
+    </>
+  );
+}
+
+export default memo(NotFound);

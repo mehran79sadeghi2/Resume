@@ -19,7 +19,7 @@ function MaxWidthController(props) {
       max-width: 1100px;
     }
     @media (min-width: 1220px) {
-      max-width: 1200px;
+      max-width: 1000px;
     }
   `;
 

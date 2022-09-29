@@ -1,43 +1,15 @@
 import Page from "../../shared-components/Page";
+import Educations from "./components/Educations";
+import Experiences from "./components/Experiences";
 import Hero from "./components/Hero";
 
 function Home() {
   return (
     <Page>
       <Hero />
-      <div>others</div>
-      <div>others</div>
-      <div>others</div>
-      <div>others</div>
-      <div>others</div>
-      <div>others</div>
-      <div>others</div>
-      <div>others</div>
-      <div>others</div>
-      <div>others</div>
-      <div>others</div>
-      <div>others</div>
-      <div>others</div>
-      <div>others</div>
-      <div>others</div>
-      <div>others</div>
-      <div>others</div>
-      <div>others</div>
-      <div>others</div>
-      <div>others</div>
-      <div>others</div>
-      <div>others</div>
-      <div>others</div>
-      <div>others</div>
-      <div>others</div>
-      <div>others</div>
-      <div>others</div>
-      <div>others</div>
-      <div>others</div>
-      <div>others</div>
-      <div>others</div>
-      <div>others</div>
-      <div>others</div>
+      <Experiences />
+      <Educations />
+
     </Page>
   );
 }
