@@ -1,0 +1,108 @@
+.Hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+
+  .ContentContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    align-self: stretch;
+    margin-left: 35px;
+    text-align: left;
+
+    h4.Profession {
+      font-size: 16px;
+      color: var(--text-3);
+      font-weight: 300;
+      margin-bottom: 10px;
+    }
+
+    h1.FullName {
+      font-size: 48px;
+      line-height: 56px;
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: var(--text-1);
+    }
+
+    p.Description {
+      font-size: 14px;
+      font-weight: 0;
+      font-style: normal;
+      line-height: 1.75em;
+      color: var(--text-2);
+      max-width: 500px;
+      text-align: justify;
+      margin-top: 0;
+      margin-bottom: 0px;
+    }
+
+    .EmailContainer {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 8px;
+      align-items: center;
+      font-size: 13px;
+      margin-top: 8px;
+      color: var(--text-2);
+
+      .EmailIconContainer {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 8px;
+      }
+    }
+
+    .ButtonsContainer {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 8px;
+
+      .SotialLinkContainer {
+        width: 30px;
+        height: 30px;
+        margin-left: 8px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        &:first-of-type {
+          margin-left: 16px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 760px) {
+    flex-direction: column;
+
+    .ContentContainer {
+      margin-left: 0;
+      margin-top: 35px;
+      align-items: center;
+      text-align: center;
+
+      h1.FullName {
+        font-size: 33px;
+      }
+
+      p.Description {
+        text-align: center;
+      }
+
+      .ButtonsContainer {
+        justify-content: center;
+      }
+    }
+  }
+}
