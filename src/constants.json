@@ -7,7 +7,7 @@
   },
   "avatar": "https://www.archiefoundationhome.org.uk/wp-content/uploads/2020/05/profile-photo-social-media.jpg",
   "description": "Fusce tempor magna mi, non egestas velit ultricies nec. Aenean convallis, risus non condimentum gravida, odio mauris ullamcorper felis, ut venenatis purus ex eu mi. Quisque imperdiet lacinia urna, a placerat sapien pretium eu.",
-  "resume-link": "https://images.nightcafe.studio//assets/profile.png?tr=w-1600,c-at_max",
+  "resume_link": "https://images.nightcafe.studio//assets/profile.png?tr=w-1600,c-at_max",
   "experiences": [
     {
         "company": "Jambod",

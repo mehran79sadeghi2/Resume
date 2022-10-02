@@ -12,7 +12,7 @@ const {
   description,
   profession,
   full_name,
-  "resume-link": resumeLink,
+  resume_link: resumeLink,
 } = info;
 
 const iconLists = {
