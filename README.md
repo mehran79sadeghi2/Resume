@@ -12,7 +12,7 @@ after it finished, run:
 
 all the informations of user are in src/constants.json
 
-infos you can set are listed below:
+informations that you can set are listed below:
 
 ```ts
 {
