@@ -1,6 +1,6 @@
 .Container {
   padding: 0 16px;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 
   .SectionTitle {
     padding-left: 15px;
@@ -21,6 +21,7 @@
     align-items: flex-start;
 
     .ExperienceItemContainer {
+      margin-bottom: 10px;
       width: 50%;
       padding-right: 15px;
       padding-left: 15px;
@@ -35,10 +36,11 @@
         width: 100%;
         padding-right: 0;
         padding-left: 0;
+        margin-bottom: 0;
       }
 
       .TitleRow {
-        margin-top: 16px;
+        margin-top: 8px;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
@@ -76,6 +78,14 @@
         font-size: 14px;
         color: var(--text-2);
         text-align: justify;
+      }
+
+      .UlContainer {
+        color: var(--text-2);
+        font-size: 14px;
+        text-align: justify;
+        padding-left: 20px;
+        margin-top: 0;
       }
     }
   }

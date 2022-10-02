@@ -1,25 +1,35 @@
 {
   "full_name": "Mehran Sadeghi",
   "profession": "Front-end Developer",
-  "email": "mehran79sadeghi2@gmail.com",
   "social_networks": {
     "linkedin": "https://www.linkedin.com/in/mehran-sadeghi",
     "github": "https://github.com/mehran79sadeghi2"
   },
   "avatar": "https://www.archiefoundationhome.org.uk/wp-content/uploads/2020/05/profile-photo-social-media.jpg",
   "description": "Fusce tempor magna mi, non egestas velit ultricies nec. Aenean convallis, risus non condimentum gravida, odio mauris ullamcorper felis, ut venenatis purus ex eu mi. Quisque imperdiet lacinia urna, a placerat sapien pretium eu.",
+  "resume-link": "https://images.nightcafe.studio//assets/profile.png?tr=w-1600,c-at_max",
   "experiences": [
     {
         "company": "Jambod",
         "date": "May 2018 - Jul 2019",
         "profession": "Android Intern",
-        "description": "Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat. Vivamus blandit, dolor vitae lacinia maximus, risus velit vehicula odio, a tincidunt turpis turpis tempus ex."
+        "description": "Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat. Vivamus blandit, dolor vitae lacinia maximus, risus velit vehicula odio, a tincidunt turpis turpis tempus ex.",
+        "bullets": [
+          "Recycling managment application with an uber like functionality.",
+          "Developed real-time location tracking of drivers.",
+          "Decreased latency by using a push-based system instead of an older pull based one."
+        ]
     },
     {
         "company": "Vira Madar",
         "date": "May 2018 - Jul 2019",
         "profession": "Front-end Developer",
-        "description": "Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat. Vivamus blandit, dolor vitae lacinia maximus, risus velit vehicula odio, a tincidunt turpis turpis tempus ex."
+        "description": "Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat. Vivamus blandit, dolor vitae lacinia maximus, risus velit vehicula odio, a tincidunt turpis turpis tempus ex.",
+        "bullets": [
+          "Recycling managment application with an uber like functionality.",
+          "Developed real-time location tracking of drivers.",
+          "Decreased latency by using a push-based system instead of an older pull based one."
+        ]
     },
     {
         "company": "SnappCarfix!",
@@ -31,7 +41,12 @@
         "company": "Karnameh",
         "date": "May 2018 - Currentry Working",
         "profession": "Front-end Developer",
-        "description": "Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat. Vivamus blandit, dolor vitae lacinia maximus, risus velit vehicula odio, a tincidunt turpis turpis tempus ex."
+        "description": "Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat. Vivamus blandit, dolor vitae lacinia maximus, risus velit vehicula odio, a tincidunt turpis turpis tempus ex.",
+        "bullets": [
+          "Recycling managment application with an uber like functionality.",
+          "Developed real-time location tracking of drivers.",
+          "Decreased latency by using a push-based system instead of an older pull based one."
+        ]
     }
   ],
   "educations": [

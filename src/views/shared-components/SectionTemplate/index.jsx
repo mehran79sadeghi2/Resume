@@ -9,7 +9,9 @@ function SectionTemplate(props) {
   return (
     <MaxWidthController className={styles.Container}>
       {/* title of hole section */}
-      <SectionTitle className={styles.SectionTitle}>{title}</SectionTitle>
+      {Boolean(title) && (
+        <SectionTitle className={styles.SectionTitle}>{title}</SectionTitle>
+      )}
 
       {/* items of section */}
       <div className={styles.ExperiencesContainer}>
@@ -20,7 +22,9 @@ function SectionTemplate(props) {
               className={styles.ExperienceItemContainer}
             >
               <div className={styles.TitleRow}>
-                <h4 className={styles.Company}>{dataItem.itemTitle} </h4>
+                {Boolean(dataItem.itemTitle) && (
+                  <h4 className={styles.Company}>{dataItem.itemTitle} </h4>
+                )}
                 {dataItem.secondItemtitle && (
                   <>
                     <span className={styles.VSeprator} />
@@ -30,11 +34,21 @@ function SectionTemplate(props) {
                   </>
                 )}
               </div>
-              {"itemSubtitle" in dataItem && (
+              {Boolean(dataItem.itemSubtitle) && (
                 <h5 className={styles.Profession}>{dataItem.itemSubtitle}</h5>
               )}
-              {"description" in dataItem && (
+              {Boolean(dataItem.description) && (
                 <p className={styles.Description}>{dataItem.description}</p>
+              )}
+              {Boolean(dataItem) && Array.isArray(dataItem.bullets) && (
+                <ul className={styles.UlContainer}>
+                  {dataItem.bullets.map(function renderBulletItem(
+                    bulletItem,
+                    bulletIndex
+                  ) {
+                    return <li key={`bullet-${bulletIndex}`}>{bulletItem}</li>;
+                  })}
+                </ul>
               )}
             </div>
           );
@@ -50,15 +64,15 @@ SectionTemplate.defaultProps = {
 };
 
 SectionTemplate.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   data: PropTypes.arrayOf(
     PropTypes.shape({
-      itemTitle: PropTypes.string.isRequired,
+      itemTitle: PropTypes.string,
       secondItemtitle: PropTypes.string,
       itemSubtitle: PropTypes.string,
       description: PropTypes.string,
     })
-  ).isRequired,
+  ),
 };
 
 export default SectionTemplate;

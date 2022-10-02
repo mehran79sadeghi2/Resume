@@ -11,6 +11,7 @@ function normalizeData(data) {
       secondItemtitle: dataItem.date,
       itemSubtitle: dataItem.profession,
       description: dataItem.description,
+      bullets: dataItem.bullets,
     };
   });
 }

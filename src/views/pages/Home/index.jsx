@@ -9,7 +9,6 @@ function Home() {
       <Hero />
       <Experiences />
       <Educations />
-
     </Page>
   );
 }

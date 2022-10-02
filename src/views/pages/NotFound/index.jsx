@@ -11,6 +11,7 @@ import {
 } from "./config";
 import styles from "./NotFound.module.scss";
 
+// a number with random properties which floats in the page
 const NumberItem = styled.div`
   position: fixed;
   top: ${(props) => props.top}px;
@@ -20,11 +21,15 @@ const NumberItem = styled.div`
     linear infinite;
   transition: 1s;
   font-size: ${(props) => props.fontSize}px;
+  user-select: none;
 `;
 
 function NotFound() {
   const itemRefs = useRef([]);
 
+  /**
+   * updates all the floatble number in page with random values
+   */
   function updateShuffle() {
     itemRefs.current.forEach((item, itemIndex) => {
       item.style.top = `${Math.random() * window.innerHeight}px`;
@@ -45,6 +50,7 @@ function NotFound() {
 
   return (
     <>
+      {/* floatable numbers */}
       {initialNumListConfigs.map(function makeConfigItemComponent(
         configItem,
         configItemIndex
@@ -61,6 +67,8 @@ function NotFound() {
           </NumberItem>
         );
       })}
+
+      {/* center content */}
       <div className={styles.Container}>
         <h1 onClick={updateShuffle} className={styles.Message}>
           404

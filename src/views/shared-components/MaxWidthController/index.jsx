@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+/**
+ * controls max-width in different devices
+ */
 function MaxWidthController(props) {
   const { as, children, ...properties } = props;
 

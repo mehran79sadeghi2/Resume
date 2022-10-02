@@ -5,12 +5,16 @@ import renderRoutes from "./routes";
 import "./index.css";
 import CssVariables from "./views/shared-components/CssVariables";
 
+function Index() {
+  return (
+    <React.StrictMode>
+      <BrowserRouter>
+        {renderRoutes()}
+        <CssVariables />
+      </BrowserRouter>
+    </React.StrictMode>
+  );
+}
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      {renderRoutes()}
-      <CssVariables />
-    </BrowserRouter>
-  </React.StrictMode>
-);
+root.render(<Index />);

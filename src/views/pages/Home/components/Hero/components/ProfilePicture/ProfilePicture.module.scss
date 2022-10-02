@@ -13,6 +13,11 @@
     padding: 25px;
     cursor: pointer;
     transition: box-shadow 0.3s;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 
     &:hover {
       box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.2);
@@ -25,6 +30,34 @@
       aspect-ratio: 1 / 1;
       max-width: 400px;
       max-height: 400px;
+    }
+
+    @keyframes LoadingImageProfile {
+      0% {
+        background-color: var(--primary);
+      }
+      50% {
+        background-color: var(--primary-hover);
+      }
+      100% {
+        background-color: var(--primary);
+      }
+    }
+
+    .Loading {
+      height: calc(100% - 50px);
+      aspect-ratio: 1 / 1;
+      max-width: 400px;
+      max-height: 400px;
+      position: absolute;
+      border-radius: 50%;
+      animation: LoadingImageProfile 1s linear infinite;
+      opacity: 0;
+      transition: 0.5s;
+
+      &.Show {
+        opacity: 1;
+      }
     }
 
     &.Details {
@@ -75,7 +108,7 @@
   @media screen and (max-width: 760px) {
     align-self: center;
 
-    .ImageParent .Image {
+    .ImageParent .Image, .ImageParent .Loading {
       max-width: 300px;
       max-height: 300px;
     }
