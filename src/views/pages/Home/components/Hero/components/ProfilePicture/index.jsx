@@ -5,10 +5,9 @@ import info from '../../../../../../../constants.json';
 import useProfilePictureDetails from './useProfilePictureDetails';
 import { ReactComponent as CancelIcon } from '../../../../../../../assets/icons/cancel.svg';
 import styles from './ProfilePicture.module.scss';
+import Modal from './Modal';
 
 const { avatar } = info;
-// console.log(avatar);
-window.avatar = avatar;
 
 /**
  * this is a clone of normal profile picture that
@@ -29,14 +28,15 @@ function ProfilePictureDetails(props) {
   }
 
   return (
-    <div className={styles.ImageContainer}>
-      <div
-        ref={detailContainerRef}
-        className={`${styles.ImageParent} ${styles.Details}`}
-      >
-        <img src={imageSrc} alt='avatar' className={styles.Image} />
-        <div className={`${styles.Loading} ${loading ? styles.Show : ''}`} />
-        {open && show && (
+    <Modal>
+      <div className={`${styles.ImageContainer} ${styles['ImageContainer--details']}`}>
+        <div
+          ref={detailContainerRef}
+          className={`${styles.ImageParent} ${styles['ImageParent--details']}`}
+        >
+          <img src={imageSrc} alt='avatar' className={styles.Image} />
+          <div className={`${styles.Loading} ${loading ? styles['Loading--show'] : ''}`} />
+          {open && show && (
           <div
             className={styles.Close}
             onClick={() => {
@@ -45,18 +45,17 @@ function ProfilePictureDetails(props) {
           >
             <CancelIcon className={styles.Icon} />
           </div>
-        )}
+          )}
+        </div>
       </div>
-    </div>
+    </Modal>
   );
 }
 
 ProfilePictureDetails.propTypes = {
   mainPictureRef: PropTypes.oneOfType([
     PropTypes.func,
-    PropTypes.shape({
-      current: PropTypes.oneOf([PropTypes.instanceOf(Element), null]),
-    }),
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
   ]).isRequired,
   imageSrc: PropTypes.string.isRequired,
   loading: PropTypes.bool.isRequired,
@@ -81,6 +80,8 @@ function ProfilePicture() {
   return (
     <>
       <div className={styles.ImageContainer}>
+
+        {/* picture */}
         <div ref={containerRef} className={styles.ImageParent}>
           <img
             onError={onErrorHandler}
@@ -92,6 +93,8 @@ function ProfilePicture() {
           <div className={`${styles.Loading} ${loading ? styles.Show : ''}`} />
         </div>
       </div>
+
+      {/* details of picture */}
       <ProfilePictureDetails
         loading={loading}
         imageSrc={imageSrc}

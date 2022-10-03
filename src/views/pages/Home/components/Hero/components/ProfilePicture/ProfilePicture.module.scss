@@ -2,7 +2,10 @@
   align-self: stretch;
   display: flex;
   align-items: center;
-  z-index: 1;
+
+  &--details {
+    z-index: 1;
+  }
 
   .ImageParent {
     width: 300px;
@@ -55,12 +58,12 @@
       opacity: 0;
       transition: 0.5s;
 
-      &.Show {
+      &--show {
         opacity: 1;
       }
     }
 
-    &.Details {
+    &--details {
       align-self: unset;
       position: fixed;
       transition: all 0.5s;

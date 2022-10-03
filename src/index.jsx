@@ -16,13 +16,11 @@ function MetaTags() {
 
 function Index() {
   return (
-    <React.StrictMode>
-      <BrowserRouter>
-        <MetaTags />
-        {renderRoutes()}
-        <CssVariables />
-      </BrowserRouter>
-    </React.StrictMode>
+    <BrowserRouter>
+      <MetaTags />
+      {renderRoutes()}
+      <CssVariables />
+    </BrowserRouter>
   );
 }
 
