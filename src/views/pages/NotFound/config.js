@@ -1,4 +1,4 @@
-import { keyframes } from "styled-components";
+import { keyframes } from 'styled-components';
 
 // configs of the 404 page
 const numNumbers = 20;
@@ -21,8 +21,7 @@ function makeConfig() {
     left: Math.random() * window.innerWidth,
     value: numList[Math.ceil(Math.random() * numList.length) - 1],
     transition:
-      Math.ceil(Math.random() * (maxTransition - minTransition)) +
-      minTransition,
+      Math.ceil(Math.random() * (maxTransition - minTransition)) + minTransition,
     goUp: Boolean(Math.ceil(Math.random() * 2) - 1),
     transform:
       Math.ceil(Math.random() * (maxTransform - minTransform)) + minTransform,
@@ -44,7 +43,7 @@ function customKeyframes(goUp, transform) {
         transform: translateY(0px);
       }
       50% {
-        transform: translateY(${goUp ? "-" : "+"}${transform}px);
+        transform: translateY(${goUp ? '-' : '+'}${transform}px);
       }
       100% {
         transform: translateY(0px);
@@ -55,7 +54,7 @@ function customKeyframes(goUp, transform) {
 const initialNumListConfigs = [...new Array(numNumbers)].map(
   function makeConfigItem() {
     return makeConfig();
-  }
+  },
 );
 
 export {

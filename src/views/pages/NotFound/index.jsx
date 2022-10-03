@@ -1,15 +1,16 @@
-import { memo, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import Button from "../../shared-components/Button";
+import React, { memo, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import Button from '../../shared-components/Button';
 import {
   customKeyframes,
   initialNumListConfigs,
   maxBlur,
   maxFontSize,
   minFontSize,
-} from "./config";
-import styles from "./NotFound.module.scss";
+} from './config';
+import MetaTags from './MetaTags';
+import styles from './NotFound.module.scss';
 
 // a number with random properties which floats in the page
 const NumberItem = styled.div`
@@ -31,35 +32,39 @@ function NotFound() {
    * updates all the floatble number in page with random values
    */
   function updateShuffle() {
-    itemRefs.current.forEach((item, itemIndex) => {
-      item.style.top = `${Math.random() * window.innerHeight}px`;
-      item.style.left = `${Math.random() * window.innerWidth}px`;
-      item.style.filter = `blur(${Math.random() * maxBlur}px)`;
-      item.style.fontSize = `${
+    itemRefs.current.forEach((_, itemIndex) => {
+      itemRefs.current[itemIndex].style.top = `${Math.random() * window.innerHeight}px`;
+      itemRefs.current[itemIndex].style.left = `${Math.random() * window.innerWidth}px`;
+      itemRefs.current[itemIndex].style.filter = `blur(${Math.random() * maxBlur}px)`;
+      itemRefs.current[itemIndex].style.fontSize = `${
         Math.ceil(Math.random() * (maxFontSize - minFontSize)) + minFontSize
       }px`;
     });
   }
 
   useEffect(function handleResize() {
-    window.addEventListener("resize", updateShuffle);
+    window.addEventListener('resize', updateShuffle);
     return function unmounting() {
-      window.removeEventListener("resize", updateShuffle);
+      window.removeEventListener('resize', updateShuffle);
     };
   }, []);
 
   return (
     <>
+      <MetaTags />
+
       {/* floatable numbers */}
       {initialNumListConfigs.map(function makeConfigItemComponent(
         configItem,
-        configItemIndex
+        configItemIndex,
       ) {
         const { goUp, transform, ...otherConfigs } = configItem;
         return (
           <NumberItem
             key={`num-${configItemIndex}`}
-            ref={(el) => (itemRefs.current[configItemIndex] = el)}
+            ref={function assignRefItem(el) {
+              itemRefs.current[configItemIndex] = el;
+            }}
             {...otherConfigs}
             keyframes={customKeyframes(goUp, transform)}
           >
@@ -73,7 +78,7 @@ function NotFound() {
         <h1 onClick={updateShuffle} className={styles.Message}>
           404
         </h1>
-        <Link to={"/"} className={styles.ButtonContainer}>
+        <Link to='/' className={styles.ButtonContainer}>
           <Button className={styles.Button}>Home</Button>
         </Link>
       </div>

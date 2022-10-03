@@ -1,5 +1,6 @@
-import styled from "styled-components";
-import PropTypes from "prop-types";
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 function Button(props) {
   const { as, children, ...properties } = props;
@@ -37,13 +38,16 @@ function Button(props) {
 }
 
 Button.defaultProps = {
-  as: "button",
+  as: 'button',
   children: null,
 };
 
 Button.propTypes = {
   as: PropTypes.string,
-  children: PropTypes.any,
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.node),
+  ]),
 };
 
 export default Button;

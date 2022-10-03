@@ -1,5 +1,6 @@
-import styles from "./SectionTitle.module.scss";
+import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './SectionTitle.module.scss';
 
 /**
  * section title
@@ -18,13 +19,16 @@ function SectionTitle(props) {
 }
 
 SectionTitle.defaultProps = {
-  className: "",
-  children: "",
+  className: '',
+  children: '',
 };
 
 SectionTitle.propTypes = {
-    children: PropTypes.string.isRequired,
-    className: PropTypes.string,
-}
+  className: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.node),
+  ]),
+};
 
 export default SectionTitle;

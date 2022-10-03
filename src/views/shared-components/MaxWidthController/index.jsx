@@ -1,4 +1,6 @@
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 /**
  * controls max-width in different devices
@@ -26,11 +28,19 @@ function MaxWidthController(props) {
     }
   `;
 
-  return <Elm {...properties} >{children}</Elm>;
+  return <Elm {...properties}>{children}</Elm>;
 }
 
 MaxWidthController.defaultProps = {
-  as: "div",
+  as: 'div',
+};
+
+MaxWidthController.propTypes = {
+  as: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.node),
+  ]).isRequired,
 };
 
 export default MaxWidthController;

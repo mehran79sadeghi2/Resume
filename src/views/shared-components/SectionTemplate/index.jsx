@@ -1,10 +1,52 @@
-import styles from "./SectionTemplate.module.scss";
-import MaxWidthController from "../MaxWidthController";
-import SectionTitle from "../SectionTitle";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styles from './SectionTemplate.module.scss';
+import MaxWidthController from '../MaxWidthController';
+import SectionTitle from '../SectionTitle';
 
 function SectionTemplate(props) {
   const { data, title } = props;
+
+  function renderSectionItem(dataItem) {
+    return (
+      <div key={dataItem.itemTitle} className={styles.ExperienceItemContainer}>
+        <div className={styles.TitleRow}>
+          {Boolean(dataItem.itemTitle) && (
+            <h4 className={styles.Company}>
+              {dataItem.itemTitle}
+              {' '}
+            </h4>
+          )}
+          {dataItem.secondItemtitle && (
+            <>
+              <span className={styles.VSeprator} />
+              <span className={styles.Date}>
+                (
+                {dataItem.secondItemtitle}
+                )
+              </span>
+            </>
+          )}
+        </div>
+        {Boolean(dataItem.itemSubtitle) && (
+          <h5 className={styles.Profession}>{dataItem.itemSubtitle}</h5>
+        )}
+        {Boolean(dataItem.description) && (
+          <p className={styles.Description}>{dataItem.description}</p>
+        )}
+        {Boolean(dataItem) && Array.isArray(dataItem.bullets) && (
+          <ul className={styles.UlContainer}>
+            {dataItem.bullets.map(function renderBulletItem(
+              bulletItem,
+              bulletIndex,
+            ) {
+              return <li key={`bullet-${bulletIndex}`}>{bulletItem}</li>;
+            })}
+          </ul>
+        )}
+      </div>
+    );
+  }
 
   return (
     <MaxWidthController className={styles.Container}>
@@ -15,51 +57,14 @@ function SectionTemplate(props) {
 
       {/* items of section */}
       <div className={styles.ExperiencesContainer}>
-        {data.map((dataItem) => {
-          return (
-            <div
-              key={dataItem.itemTitle}
-              className={styles.ExperienceItemContainer}
-            >
-              <div className={styles.TitleRow}>
-                {Boolean(dataItem.itemTitle) && (
-                  <h4 className={styles.Company}>{dataItem.itemTitle} </h4>
-                )}
-                {dataItem.secondItemtitle && (
-                  <>
-                    <span className={styles.VSeprator} />
-                    <span className={styles.Date}>
-                      ({dataItem.secondItemtitle})
-                    </span>
-                  </>
-                )}
-              </div>
-              {Boolean(dataItem.itemSubtitle) && (
-                <h5 className={styles.Profession}>{dataItem.itemSubtitle}</h5>
-              )}
-              {Boolean(dataItem.description) && (
-                <p className={styles.Description}>{dataItem.description}</p>
-              )}
-              {Boolean(dataItem) && Array.isArray(dataItem.bullets) && (
-                <ul className={styles.UlContainer}>
-                  {dataItem.bullets.map(function renderBulletItem(
-                    bulletItem,
-                    bulletIndex
-                  ) {
-                    return <li key={`bullet-${bulletIndex}`}>{bulletItem}</li>;
-                  })}
-                </ul>
-              )}
-            </div>
-          );
-        })}
+        {data.map(renderSectionItem)}
       </div>
     </MaxWidthController>
   );
 }
 
 SectionTemplate.defaultProps = {
-  title: "",
+  title: '',
   data: [],
 };
 
@@ -71,7 +76,7 @@ SectionTemplate.propTypes = {
       secondItemtitle: PropTypes.string,
       itemSubtitle: PropTypes.string,
       description: PropTypes.string,
-    })
+    }),
   ),
 };
 

@@ -1,24 +1,25 @@
-import info from "../../../../../../../constants.json";
-import Button from "../../../../../../shared-components/Button";
-import styles from "./Contents.module.scss";
-import { ReactComponent as EmailIcon } from "./../../../../../../../assets/icons/email.svg";
-import { ReactComponent as LinkedinIcon } from "./../../../../../../../assets/icons/linkedin.svg";
-import { ReactComponent as GithubIcon } from "./../../../../../../../assets/icons/github.svg";
-import { ReactComponent as StackOverFlowIcon } from "./../../../../../../../assets/icons/stackoverflow.svg";
+import React from 'react';
+import info from '../../../../../../../constants.json';
+import Button from '../../../../../../shared-components/Button';
+import styles from './Contents.module.scss';
+import { ReactComponent as EmailIcon } from '../../../../../../../assets/icons/email.svg';
+import { ReactComponent as LinkedinIcon } from '../../../../../../../assets/icons/linkedin.svg';
+import { ReactComponent as GithubIcon } from '../../../../../../../assets/icons/github.svg';
+import { ReactComponent as StackOverFlowIcon } from '../../../../../../../assets/icons/stackoverflow.svg';
 
 const {
   email,
-  social_networks,
+  social_networks: socialNetworks,
   description,
   profession,
-  full_name,
+  full_name: fullName,
   resume_link: resumeLink,
 } = info;
 
 const iconLists = {
-  linkedin: { icon: LinkedinIcon, label: "LinkedIn" },
-  github: { icon: GithubIcon, label: "GitHub" },
-  slackOverFlow: { icon: StackOverFlowIcon, label: "Stack Overflow" },
+  linkedin: { icon: LinkedinIcon, label: 'LinkedIn' },
+  github: { icon: GithubIcon, label: 'GitHub' },
+  slackOverFlow: { icon: StackOverFlowIcon, label: 'Stack Overflow' },
 };
 
 function Contents() {
@@ -30,7 +31,7 @@ function Contents() {
       )}
 
       {/* full name */}
-      {Boolean(full_name) && <h1 className={styles.FullName}>{full_name}</h1>}
+      {Boolean(fullName) && <h1 className={styles.FullName}>{fullName}</h1>}
 
       {/* description */}
       {Boolean(description) && (
@@ -51,22 +52,22 @@ function Contents() {
       <div className={styles.ButtonsContainer}>
         {/* resume download */}
         {Boolean(resumeLink) && (
-          <Button as={"a"} href={resumeLink} className={styles.DownloadButton}>
+          <Button as='a' href={resumeLink} className={styles.DownloadButton}>
             Download CV
           </Button>
         )}
 
         {/* social network links */}
-        {social_networks &&
-          Object.keys(social_networks).map((linkItem) => {
+        {socialNetworks
+          && Object.keys(socialNetworks).map((linkItem) => {
             const { icon: IconComponent, label } = iconLists[linkItem];
             return (
               <a
                 key={label}
-                target="_blank"
-                href={social_networks[linkItem]}
+                target='_blank'
+                href={socialNetworks[linkItem]}
                 className={styles.SotialLinkContainer}
-                rel="noreferrer"
+                rel='noreferrer'
               >
                 <IconComponent className={styles.SotialIcon} />
                 <div className={styles.Label}>{label}</div>
