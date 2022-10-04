@@ -51,6 +51,8 @@ function ProfilePictureDetails(props) {
     </div>
   );
 
+  // we use portal to render the modal in div with image-viewer id
+  //  besides the root div
   return createPortal(portal, pictureModalRoot);
 }
 
