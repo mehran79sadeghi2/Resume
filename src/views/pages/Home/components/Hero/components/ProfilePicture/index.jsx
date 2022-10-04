@@ -1,13 +1,15 @@
 import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
+import { createPortal } from 'react-dom';
 import profileImage from '../../../../../../../assets/images/profile.webp';
 import info from '../../../../../../../constants.json';
 import useProfilePictureDetails from './useProfilePictureDetails';
 import { ReactComponent as CancelIcon } from '../../../../../../../assets/icons/cancel.svg';
 import styles from './ProfilePicture.module.scss';
-import Modal from './Modal';
 
 const { avatar } = info;
+
+const pictureModalRoot = document.getElementById('image-viewer');
 
 /**
  * this is a clone of normal profile picture that
@@ -27,29 +29,29 @@ function ProfilePictureDetails(props) {
     return null;
   }
 
-  return (
-    <Modal>
-      <div className={`${styles.ImageContainer} ${styles['ImageContainer--details']}`}>
+  const portal = (
+    <div className={`${styles.ImageContainer} ${styles['ImageContainer--details']}`}>
+      <div
+        ref={detailContainerRef}
+        className={`${styles.ImageParent} ${styles['ImageParent--details']}`}
+      >
+        <img src={imageSrc} alt='avatar' className={styles.Image} />
+        <div className={`${styles.Loading} ${loading ? styles['Loading--show'] : ''}`} />
+        {open && show && (
         <div
-          ref={detailContainerRef}
-          className={`${styles.ImageParent} ${styles['ImageParent--details']}`}
+          className={styles.Close}
+          onClick={() => {
+            setOpen(false);
+          }}
         >
-          <img src={imageSrc} alt='avatar' className={styles.Image} />
-          <div className={`${styles.Loading} ${loading ? styles['Loading--show'] : ''}`} />
-          {open && show && (
-          <div
-            className={styles.Close}
-            onClick={() => {
-              setOpen(false);
-            }}
-          >
-            <CancelIcon className={styles.Icon} />
-          </div>
-          )}
+          <CancelIcon className={styles.Icon} />
         </div>
+        )}
       </div>
-    </Modal>
+    </div>
   );
+
+  return createPortal(portal, pictureModalRoot);
 }
 
 ProfilePictureDetails.propTypes = {
