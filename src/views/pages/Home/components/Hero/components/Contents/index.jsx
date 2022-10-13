@@ -6,7 +6,6 @@ import { ReactComponent as EmailIcon } from '../../../../../../../assets/icons/e
 import { ReactComponent as LinkedinIcon } from '../../../../../../../assets/icons/linkedin.svg';
 import { ReactComponent as GithubIcon } from '../../../../../../../assets/icons/github.svg';
 import { ReactComponent as StackOverFlowIcon } from '../../../../../../../assets/icons/stackoverflow.svg';
-import resumeLink from '../../../../../../../assets/documents/resume.pdf';
 
 const {
   email,
@@ -14,7 +13,7 @@ const {
   description,
   profession,
   full_name: fullName,
-  show_resume: showResume,
+  resume_link: resumeLink,
 } = info;
 
 const iconLists = {
@@ -52,8 +51,8 @@ function Contents() {
       {/* links section */}
       <div className={styles.ButtonsContainer}>
         {/* resume download */}
-        {showResume && (
-          <Button as='a' href={resumeLink} className={styles.DownloadButton}>
+        {resumeLink && (
+          <Button as='a' target="_blank" href={resumeLink} className={styles.DownloadButton}>
             Download CV
           </Button>
         )}
