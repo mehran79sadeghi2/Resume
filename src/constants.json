@@ -5,9 +5,9 @@
     "linkedin": "https://www.linkedin.com/in/mehran-sadeghi",
     "github": "https://github.com/mehran79sadeghi2"
   },
-  "avatar": "https://www.archiefoundationhome.org.uk/wp-content/uploads/2020/05/profile-photo-social-media.jpg",
+  "show_avatar": true,
   "description": "I'm a Web Developer, currently working as Front-end Developer at Karnameh, an online platform for buying and selling cars (backed by Divar). I have around 3 years of experience in software development. My aim is to enhance user experience and create new values in addition to delivering a clean scalable code, by being closely in touch with the end-users.",
-  "resume_link": "https://images.nightcafe.studio//assets/profile.png?tr=w-1600,c-at_max",
+  "show_resume": true,
   "experiences": [
     {
       "company": "Karnameh",
@@ -57,7 +57,7 @@
   "educations": [
     {
       "academy": "Lorestan University, Iran",
-      "date": "Bachelor",
+      "date": "Bachelor's degree",
       "major": "Software Engineering"
     }
   ],

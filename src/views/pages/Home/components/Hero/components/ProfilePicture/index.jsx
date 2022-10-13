@@ -1,15 +1,16 @@
 import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { createPortal } from 'react-dom';
-import profileImage from '../../../../../../../assets/images/profile.webp';
-import info from '../../../../../../../constants.json';
+import profileImageEmpty from '../../../../../../../assets/images/profile.webp';
 import useProfilePictureDetails from './useProfilePictureDetails';
 import { ReactComponent as CancelIcon } from '../../../../../../../assets/icons/cancel.svg';
 import styles from './ProfilePicture.module.scss';
-
-const { avatar } = info;
+import profilePicture from '../../../../../../../assets/images/profile-picture.jpeg';
+import info from '../../../../../../../constants.json';
 
 const pictureModalRoot = document.getElementById('image-viewer');
+
+const { show_avatar: showAvatar } = info;
 
 /**
  * this is a clone of normal profile picture that
@@ -70,8 +71,6 @@ function ProfilePicture() {
   const [loadError, setLoadError] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  console.log(loading); // eslint-disable-line
-
   function onErrorHandler() {
     setLoadError(true);
     setLoading(false);
@@ -81,7 +80,7 @@ function ProfilePicture() {
     setLoading(false);
   }
 
-  const imageSrc = loadError || !avatar ? profileImage : avatar;
+  const imageSrc = loadError || !profilePicture || !showAvatar ? profileImageEmpty : profilePicture;
 
   return (
     <>
