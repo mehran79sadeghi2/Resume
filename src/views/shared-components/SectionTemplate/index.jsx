@@ -10,12 +10,12 @@ function SectionTemplate(props) {
   function renderSectionItem(dataItem) {
     return (
       <div key={dataItem.itemTitle} className={styles.ExperienceItemContainer}>
-        <div className={styles.TitleRow}>
+        <span className={styles.TitleRow}>
           {Boolean(dataItem.itemTitle) && (
-            <h4 className={styles.Company}>
+            <span className={styles.Company}>
               {dataItem.itemTitle}
               {' '}
-            </h4>
+            </span>
           )}
           {dataItem.secondItemtitle && (
             <>
@@ -27,7 +27,7 @@ function SectionTemplate(props) {
               </span>
             </>
           )}
-        </div>
+        </span>
         {Boolean(dataItem.itemSubtitle) && (
           <h5 className={styles.Profession}>{dataItem.itemSubtitle}</h5>
         )}

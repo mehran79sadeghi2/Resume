@@ -70,6 +70,8 @@ function ProfilePicture() {
   const [loadError, setLoadError] = useState(false);
   const [loading, setLoading] = useState(true);
 
+  console.log(loading); // eslint-disable-line
+
   function onErrorHandler() {
     setLoadError(true);
     setLoading(false);
@@ -94,7 +96,7 @@ function ProfilePicture() {
             alt='avatar'
             className={styles.Image}
           />
-          <div className={`${styles.Loading} ${loading ? styles.Show : ''}`} />
+          <div className={`${styles.Loading} ${loading ? styles['Loading--show'] : ''}`} />
         </div>
       </div>
 

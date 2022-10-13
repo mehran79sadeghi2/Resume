@@ -1,59 +1,64 @@
 {
-  "full_name": "Mehran Sadeghi",
+  "full_name": "MEHRAN SADEGHI",
   "profession": "Front-end Developer",
   "social_networks": {
     "linkedin": "https://www.linkedin.com/in/mehran-sadeghi",
     "github": "https://github.com/mehran79sadeghi2"
   },
   "avatar": "https://www.archiefoundationhome.org.uk/wp-content/uploads/2020/05/profile-photo-social-media.jpg",
-  "description": "Fusce tempor magna mi, non egestas velit ultricies nec. Aenean convallis, risus non condimentum gravida, odio mauris ullamcorper felis, ut venenatis purus ex eu mi. Quisque imperdiet lacinia urna, a placerat sapien pretium eu.",
+  "description": "I'm a Web Developer, currently working as Front-end Developer at Karnameh, an online platform for buying and selling cars (backed by Divar). I have around 3 years of experience in software development. My aim is to enhance user experience and create new values in addition to delivering a clean scalable code, by being closely in touch with the end-users.",
   "resume_link": "https://images.nightcafe.studio//assets/profile.png?tr=w-1600,c-at_max",
   "experiences": [
     {
-        "company": "Jambod",
-        "date": "May 2018 - Jul 2019",
-        "profession": "Android Intern",
-        "description": "Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat. Vivamus blandit, dolor vitae lacinia maximus, risus velit vehicula odio, a tincidunt turpis turpis tempus ex.",
-        "bullets": [
-          "Recycling managment application with an uber like functionality.",
-          "Developed real-time location tracking of drivers.",
-          "Decreased latency by using a push-based system instead of an older pull based one."
-        ]
+      "company": "Karnameh",
+      "date": "Aug 2022 - Present",
+      "profession": "Front-end Developer",
+      "description": "Karnameh is one of the services of Divar with the aim of creating a better user experience in buying and selling cars and as a complementary service of Divar in the field of cars. This service intends to become a reliable assistant for Iranians in buying and selling cars and create a superior experience in buying and selling cars for you with services such as on-site car expertise and customized car sales."
     },
     {
-        "company": "Vira Madar",
-        "date": "May 2018 - Jul 2019",
-        "profession": "Front-end Developer",
-        "description": "Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat. Vivamus blandit, dolor vitae lacinia maximus, risus velit vehicula odio, a tincidunt turpis turpis tempus ex.",
-        "bullets": [
-          "Recycling managment application with an uber like functionality.",
-          "Developed real-time location tracking of drivers.",
-          "Decreased latency by using a push-based system instead of an older pull based one."
-        ]
+      "company": "SnappCarFix / CarFillo",
+      "date": "Oct 2021 - Aug 2022 · 11 mos",
+      "profession": "Front-end Developer",
+      "description": "SnappCarFix is an online platform for Car parts and services, backed by Snapp (Uber clone). It includes web apps for Stores, ServiceCenters, Agents, and Sellers, to offer products/services like oil, battery, engine parts, car wash, etc, with 7 delivery/service solutions per product.",
+      "bullets": [
+        "Lead front-end developer because of advocating best development practices and writing high-performance, reusable code in 3 Web Applications",
+        "Refactoring more than 80% of codes of all 3 projects with upgraded UI/UX and optimizing theme in order to responsive web design concepts",
+        "Design a clean architecture for CSS based on styled components, CSS modules, and bootstrap",
+        "Getting fluency in Map tools like Mapbox-gl and implementing them in projects",
+        "Contributed to projects within Scrum project management environments."
+      ]
     },
     {
-        "company": "SnappCarfix!",
-        "date": "May 2018 - Jul 2019",
-        "profession": "Front-end Developer",
-        "description": "Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat. Vivamus blandit, dolor vitae lacinia maximus, risus velit vehicula odio, a tincidunt turpis turpis tempus ex."
+      "company": "ViraMadar Pishran",
+      "date": "Aug 2020 - Oct 2021 · 1 yr 3 mos",
+      "profession": "Front-end Developer",
+      "description": "ViraMdar Pishran is a start-up company in the field of application and web design, which started its activity in the field of internet business in 2018.",
+      "bullets": [
+        "Responsible for implementing high-level graphical components with the combination of SVG and CSS in 3 projects",
+        "Followed SDLC best practices within Agile Methodologies",
+        "Implementing my own npm package for React.js and using it in 2 projects of the company",
+        "Design architecture of SSR and CSR projects and adapt the team to it",
+        "More than 50% increase in the speed of SRR projects with tools like lazy loading",
+        "Improved tools to boost user interaction and deliver design versatility",
+        "Responsible to manage repositories of 5 projects in git"
+      ]
     },
     {
-        "company": "Karnameh",
-        "date": "May 2018 - Currentry Working",
-        "profession": "Front-end Developer",
-        "description": "Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat. Vivamus blandit, dolor vitae lacinia maximus, risus velit vehicula odio, a tincidunt turpis turpis tempus ex.",
-        "bullets": [
-          "Recycling managment application with an uber like functionality.",
-          "Developed real-time location tracking of drivers.",
-          "Decreased latency by using a push-based system instead of an older pull based one."
-        ]
+      "company": "Jambod",
+      "date": "Jul 2019 - Oct 2019 · 4 mos",
+      "profession": "Android Intern",
+      "description": "Recycling management application with an uber like functionality.",
+      "bullets": [
+        "Developed real-time location tracking of drivers.",
+        "Decreased latency by using a push-based system instead of an older pull based one"
+      ]
     }
   ],
   "educations": [
     {
-        "academy": "Jambod",
-        "date": "May 2018 - Jul 2019",
-        "major": "Android Intern"
+      "academy": "Lorestan University, Iran",
+      "date": "Bachelor",
+      "major": "Software Engineering"
     }
   ],
   "colors": {

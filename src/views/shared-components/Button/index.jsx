@@ -7,11 +7,12 @@ function Button(props) {
 
   const ButtonComponent = styled[as]`
     box-shadow: 0 10px 10px -8px rgba(0, 0, 0, 0.22);
-    height: 43px;
+    height: 37px;
     border: 2px solid var(--primary);
     display: flex;
     flex-direction: row;
     justify-content: center;
+    white-space: nowrap;
     align-items: center;
     border-radius: 100vmax;
     padding: 0 30px;
